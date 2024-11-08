@@ -1,0 +1,129 @@
+body {
+  text-align: center;
+  background-color: var(--background-color);
+  color: var(--color);
+}
+
+.link {
+  color: var(--primary-color);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.question, .option {
+  margin: 4px;
+  padding: 10px;
+  background-color: var(--background-color);
+  color: var(--color);
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.1);
+  transition: background-color .4s, color .4s;
+}
+
+@keyframes slide_in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+  
+}
+
+#pop_ups{
+  position: fixed;
+  top: 100px;
+  margin: 4px;
+
+}
+
+.pop_up{
+  padding: 10px;
+  background-color: var(--background-color);
+  color: var(--color);  
+  animation: slide_in 1s;
+  border-radius: 5px;
+  box-shadow: 2px 10px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.1);
+  transition: background-color .4s, color .4s;
+}
+.option:hover, .pop_up:hover {
+  cursor: pointer;
+  color: var(--background-color);
+  background-color: var(--primary-color);
+  transition: background-color .07s, color .07s;
+}
+
+@keyframes header_text_animation {
+  from {
+    transform: translateX(-100%) scale(0.4) rotate(30deg);
+  }
+  to {
+    transform: translateX(0) scale(1) rotate(0);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#switch_mode_btn {
+  margin: 4px;
+  padding: 10px;
+  background-color: var(--background-color);
+  color: var(--color);
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: background-color .4s, color .4s;
+}
+
+header {
+  position: relative;
+  background: linear-gradient(60deg, var(--primary-color), var(--sub-primary-color));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  h1 {
+    animation: header_text_animation 2s linear;
+    color: whitesmoke;
+  }
+
+  button {
+    position: absolute;
+    bottom: 100px;
+    margin: 4px;
+    padding: 10px;
+    background-color: var(--background-color);
+    color: var(--color);
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: background-color .4s, color .4s;
+
+    &:hover {
+      color: white;
+      background-color: var(--primary-color);
+      transition: background-color .07s, color .07s;
+    }
+    animation: appear 4s linear;
+  }
+}
